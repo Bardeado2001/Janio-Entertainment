@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" type="text/css" href="seuarquivo2.css">
+</head>
+<body>
+    
+    <h1>Meu Portfólio</h1>
+    <div class="galeria">
+      <div class="imgs">
+        <img src="GTA J BK.jpg" alt="Projeto 1" onclick="openModal('GTA J BK.jpg', 'A Janio.Games é uma empresa dedicada a criar experiências de entretenimento excepcionais por meio de jogos inovadores. Nossos objetivos fundamentais são inspirar diversão, desafio e conexão em jogadores de todo o mundo, enquanto continuamos a inovar e evoluir no universo dos jogos.')">
+        <h6>JANIO GAMES</h6>
+      </div>
+
+      <div class="imgs">
+        <img src="GTA J LANGOA.jpg" alt="Projeto 1" onclick="openModal('GTA J LANGOA.jpg', 'A Janio.Media é uma produtora apaixonada por contar histórias cativantes através de animes, filmes e séries. Nosso objetivo principal é envolver o público com narrativas emocionantes e criativas, proporcionando experiências únicas e memoráveis.')">
+        <h6>JANIO MEDIA</h6>
+      </div>
+
+      <div class="imgs">
+        <img src="janioshop.jpg" alt="Projeto 1" onclick="openModal('janioshop.jpg', 'A Janio Shop é a loja dos sonhos para todos os entusiastas de jogos. Nosso objetivo é oferecer uma vasta seleção de jogos, consoles e acessórios de alta qualidade para atender às necessidades dos gamers de todas as idades. Queremos ser o destino preferido para quem busca os melhores produtos e a melhor experiência de compra no mundo dos games.')">
+        <h6>JANIO SHOP</h6>
+      </div>
+    </div>
+
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <span id="closeBtn" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" alt="">
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir o modal com a imagem e descrição
+        function openModal(imageSrc, description) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("modalImg");
+            const modalDescription = document.getElementById("modalDescription");
+
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+            modalDescription.textContent = description;
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // Fechar o modal ao clicar fora da imagem
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
